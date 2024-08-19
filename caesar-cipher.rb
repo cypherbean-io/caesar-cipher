@@ -9,7 +9,16 @@ def caesar_cipher(string, shift)
   end.join('')
 end
 
+# Method to shift the character by the shift value
 def shift_char(char, shift)
-  # placeholder method
+  shift = shift % 26
+  char = char.ord
+  if char.between?(65, 90)
+    char = ((char + shift - 65) % 26) + 65
+  elsif char.between?(97, 122)
+    char = ((char + shift - 97) % 26) + 97
+  end
+  char.chr
 end
 
+puts caesar_cipher('Sweet Home Alabama', 20)
