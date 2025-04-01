@@ -15,6 +15,8 @@ class CaesarCipher
     end.join
   end
 
+  private
+
   # Method to shift the character by the shift value
   def shift_char(char, shift)
     shift %= 26
